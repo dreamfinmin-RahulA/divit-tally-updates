@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://dreamfinmin-rahula.github.io/divit-tally-updates/sitemap.xml
