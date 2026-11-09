@@ -225,17 +225,6 @@ footer{border-top:1px solid var(--border);padding-block:26px 48px;font-size:13px
 footer .tm{font-size:12px}
 .contactline{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;margin-top:4px}
 .contactline a{text-decoration:none;font-weight:600}
-.enq{background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:28px;max-width:720px;margin:0 auto}
-.enq .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media (max-width:560px){.enq .grid2{grid-template-columns:1fr}}
-.enq label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin:0 0 5px}
-.enq label .req{color:#c0392b}
-.enq input,.enq select,.enq textarea{width:100%;font:400 15px/1.4 var(--font-sans);color:var(--ink);background:var(--surface-subtle);border:1px solid var(--border);border-radius:var(--r2);padding:11px 12px;margin-bottom:14px}
-.enq input:focus,.enq select:focus,.enq textarea:focus{outline:none;border-color:var(--primary);background:#fff;box-shadow:0 0 0 3px var(--primary-soft)}
-.enq textarea{min-height:76px;resize:vertical;margin-bottom:8px}
-.enq .btn{width:100%;justify-content:center;border:0;cursor:pointer}
-.enq .priv{font-size:12.5px;color:var(--ink-muted);text-align:center;margin:12px 0 0}
-.enq .ok{display:none;background:var(--primary-soft);border:1px solid var(--primary-line);color:var(--primary-hover);border-radius:var(--r2);padding:14px 16px;font-size:14px;font-weight:600;text-align:center}
 .btn-ghost{background:#fff;color:var(--primary-hover);border:1px solid var(--primary-line)}
 .btn-ghost:hover{background:var(--primary-soft)}
 html{scroll-behavior:smooth}
@@ -252,11 +241,6 @@ html{scroll-behavior:smooth}
 .feat:target,.autoshots>div:target{animation:hl 2.2s ease-out}
 @keyframes hl{0%,12%{box-shadow:0 0 0 3px var(--primary),0 0 0 11px var(--primary-soft)}100%{box-shadow:0 0 0 0 rgba(0,0,0,0)}}
 @media (max-width:820px){.navdrop{display:none}}
-#enqOk{display:none;background:var(--surface);border:1px solid var(--primary-line);border-radius:12px;padding:18px 20px;margin-top:16px;box-shadow:var(--shadow)}
-#enqOk b{color:var(--ink)}
-#enqOk a:not(.btn){color:var(--primary-hover);font-weight:600}
-#enqOk .btn-primary{background:var(--primary);color:#fff;border:0;box-shadow:0 10px 22px rgba(24,154,180,.28)}
-#enqOk .btn-primary:hover{background:var(--primary-hover)}
 .waqr{display:flex;gap:16px;margin-top:12px;flex-wrap:wrap}
 .waqr>div{text-align:center}
 .waqr img{width:94px;height:94px;border-radius:9px;background:#fff;padding:5px;display:block}
@@ -565,7 +549,7 @@ html{scroll-behavior:smooth}
     <div class="cta">
       <div>
         <!-- GOOGLE FORM: paste your form link into the GFORM variable in the <script> near the bottom of this file. -->
-        <iframe id="gformFrame" title="Divit Tally Automator enquiry form" style="width:100%;border:0;border-radius:12px;background:#fff;min-height:1180px;display:none" loading="lazy"></iframe>
+        <iframe id="gformFrame" title="Divit Tally Automator enquiry form" style="width:100%;border:0;border-radius:12px;background:#fff;min-height:1760px;display:none" loading="lazy"></iframe>
         <div id="gformFallback" style="background:var(--surface);border:1px solid var(--primary-line);border-radius:12px;padding:22px 24px;box-shadow:var(--shadow)">
           <b style="color:var(--ink);font-size:17px;font-family:var(--font-display)">Get your 15-day free trial.</b>
           <p style="margin:9px 0 0;font-size:14px;color:var(--ink-muted)">Message us on WhatsApp with your name and firm, and we&rsquo;ll send your Windows download link - usually the same working day.</p>
@@ -623,7 +607,7 @@ html{scroll-behavior:smooth}
   // ===== Paste your Google Form link here (Form -> Send -> < > embed link, OR the normal /viewform link).
   //       Also turn ON e-mail alerts: in the Form, Responses tab -> three dots ->
   //       "Get e-mail notifications for new responses" -> so every submission e-mails you.
-  var GFORM="<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdijr5HC0Q3fjHojsCJoZwnyFJFpQeIzxkheTxIP_oSWy3HDA/viewform?embedded=true" width="640" height="1745" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>";
+  var GFORM="https://docs.google.com/forms/d/e/1FAIpQLSdijr5HC0Q3fjHojsCJoZwnyFJFpQeIzxkheTxIP_oSWy3HDA/viewform?embedded=true";
 
   // Features dropdown: close after a choice, and on an outside click
   var drops=[].slice.call(document.querySelectorAll("details.navdrop"));
