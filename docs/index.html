@@ -280,7 +280,7 @@ html{scroll-behavior:smooth}
     (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);
   }
   window.addEventListener("DOMContentLoaded",function(){
-    function track(sel,name){document.querySelectorAll(sel).forEach(function(a){a.addEventListener("click",function(){ if(window.gtag) gtag("event",name); });});}
+    function track(sel,name){document.querySelectorAll(sel).forEach(function(a){a.addEventListener("click",function(){ if(window.gtag) gtag("event",name,{transport_type:"beacon"}); });});}
     track('a[href="#get"]',"get_trial_click");
     track('a[href^="https://wa.me/"]',"whatsapp_click");
     track('a[href$="Brochure.pdf"]',"brochure_click");
