@@ -264,6 +264,56 @@ html{scroll-behavior:smooth}
 .plan .btn{width:100%;justify-content:center}
 .pbadge{position:absolute;top:-12px;left:24px;background:var(--primary);color:#fff;font-size:11.5px;font-weight:700;padding:5px 12px;border-radius:20px}
 .pricenote{text-align:center;color:var(--ink-muted);font-size:13px;margin-top:18px;max-width:62ch;margin-inline:auto}
+
+/* trial form (own design; answers go into the Google Form) */
+.tform{background:var(--surface);color:var(--ink);border-radius:14px;padding:30px 30px 26px;box-shadow:var(--shadow-xl);text-align:left}
+.tform-head{margin-bottom:20px}
+.tform-badge{display:inline-block;background:var(--primary-soft);color:var(--primary-hover);border:1px solid var(--primary-line);font:700 11.5px/1 var(--font-sans);letter-spacing:.06em;text-transform:uppercase;padding:6px 10px;border-radius:20px}
+.tform h3{font-size:24px;line-height:1.2;margin-top:12px;color:var(--ink)}
+.cta .tform p.tsub{color:var(--ink-muted);font-size:14.5px;margin-top:6px}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.tgrid .full{grid-column:1/-1}
+.tf{display:grid;gap:6px;min-width:0}
+.tf>span,.tset legend{font:600 13.5px/1.3 var(--font-sans);color:var(--ink)}
+.tf i,.tset i{font-style:normal;color:#c0392b}
+.tf input,.tf select,.tf textarea{width:100%;min-height:46px;padding:11px 13px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;color:var(--ink);font:15px/1.4 var(--font-sans);transition:border-color .15s,box-shadow .15s}
+.tf textarea{min-height:84px;resize:vertical}
+.tf select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235b6b80' stroke-width='1.8'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.tf input::placeholder,.tf textarea::placeholder{color:#94a3b8}
+.tf input:focus,.tf select:focus,.tf textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(24,154,180,.18)}
+.tf.bad input,.tf.bad select{border-color:#c0392b;box-shadow:0 0 0 3px rgba(192,57,43,.12)}
+.terr{display:none;font-size:12.5px;color:#c0392b}
+.bad .terr{display:block}
+.thint{font-size:12.5px;color:var(--ink-muted)}
+.tset{border:0;padding:0;margin:0;min-width:0}
+.tset legend{padding:0;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border:1px solid #cbd5e1;border-radius:20px;font:500 14px/1 var(--font-sans);color:var(--ink);background:#fff;cursor:pointer;transition:all .15s;user-select:none}
+.chip span:hover{border-color:var(--primary-line);background:var(--primary-soft)}
+.chip input:checked+span{background:var(--primary);border-color:var(--primary);color:#fff}
+.chip input:focus-visible+span{box-shadow:0 0 0 3px rgba(24,154,180,.3)}
+.tother{margin-top:10px;display:none}
+.tother.on{display:grid}
+.thp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.tsubmit{margin-top:22px;display:grid;gap:10px}
+.cta .tform .btn-primary.tbtn{width:100%;justify-content:center;min-height:52px;font-size:16px;background:var(--primary);color:#fff}
+.cta .tform .btn-primary.tbtn:hover{background:var(--primary-hover)}
+.tbtn[disabled]{opacity:.7;cursor:wait;transform:none}
+.cta .tform p.tfine{font-size:12.5px;color:var(--ink-muted);margin:0;text-align:center}
+.tmsg{display:none;margin-top:12px;padding:12px 14px;border-radius:8px;font-size:14px;background:#fdecea;color:#8a1f12;border:1px solid #f5c2bb}
+.tmsg.on{display:block}
+.tmsg a{color:inherit;font-weight:700}
+.tdone{display:none;text-align:center;padding:16px 4px 8px}
+.tdone.on{display:block}
+.tdone .tick{width:60px;height:60px;border-radius:50%;background:var(--success-soft);display:grid;place-items:center;margin:0 auto 14px}
+.tdone .tick svg{width:30px;height:30px;stroke:var(--success);fill:none;stroke-width:2.6}
+.tdone h3{margin-top:0}
+.cta .tform .tdone p{color:var(--ink-muted);font-size:15px;margin-top:10px}
+.tdone ol{text-align:left;max-width:440px;margin:18px auto 0;padding-left:20px;color:var(--ink);font-size:14.5px;display:grid;gap:6px}
+.tdone .btn{margin-top:18px}
+@media (max-width:600px){.tform{padding:22px 18px 20px}.tgrid{grid-template-columns:1fr}.tform h3{font-size:21px}}
 </style>
 <!-- Analytics: Google Analytics 4 + Microsoft Clarity. Paste your two IDs below. -->
 <script>
@@ -630,13 +680,49 @@ html{scroll-behavior:smooth}
     <div class="sec-head">
       <p class="eyebrow">Start your 15-day free trial</p>
       <h2>Get your download link.</h2>
-      <p>Fill in the short form and we&rsquo;ll send your Windows download link on WhatsApp or e-mail - usually the same working day. Every feature, no licence key, no card.</p>
+      <p>Fill in the short form and your Windows download link reaches your e-mail in a minute, with the brochure and user manual. Every feature, no licence key, no card.</p>
     </div>
     <div class="cta" style="display:block;padding-top:32px">
       <div class="getform">
-        <!-- GOOGLE FORM: paste your form link into the GFORM variable in the <script> near the bottom of this file. -->
-        <iframe id="gformFrame" title="Divit Tally Automator enquiry form" style="width:100%;border:0;border-radius:14px;background:#fff;min-height:1820px;display:none" loading="lazy"></iframe>
-        <div id="gformFallback" style="background:var(--surface);border:1px solid var(--primary-line);border-radius:12px;padding:22px 24px;box-shadow:var(--shadow);max-width:620px;margin:0 auto">
+        <!-- TRIAL FORM: our own design. Answers are sent into the Google Form, so the Google Sheet, the auto-reply e-mail and the WhatsApp alert keep working. -->
+        <form id="trialForm" class="tform" novalidate>
+          <div id="tfields">
+            <div class="tform-head">
+              <span class="tform-badge">15-day free trial &middot; no card</span>
+              <h3>Get your download link</h3>
+              <p class="tsub">Takes 30 seconds. The download link, brochure and user manual reach your e-mail in a minute.</p>
+            </div>
+            <div class="tgrid">
+              <label class="tf" data-f="name"><span>Your name <i>*</i></span><input name="name" autocomplete="name" maxlength="80" placeholder="e.g. Ravi Kumar"><em class="terr">Please enter your name.</em></label>
+              <label class="tf"><span>Business / firm name</span><input name="firm" autocomplete="organization" maxlength="120" placeholder="e.g. Kumar Traders"></label>
+              <label class="tf" data-f="phone"><span>WhatsApp number <i>*</i></span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="e.g. 98100 12345"><em class="terr">Please enter a valid mobile number.</em></label>
+              <label class="tf" data-f="email"><span>E-mail <i>*</i></span><input name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" placeholder="you@example.com"><em class="terr">Please enter a valid e-mail. The download link is sent here.</em></label>
+              <label class="tf full" data-f="state"><span>State <i>*</i></span><select name="state" autocomplete="address-level1"><option value="">Select your state</option><option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option><option>Bihar</option><option>Chhattisgarh</option><option>Goa</option><option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option><option>Jharkhand</option><option>Karnataka</option><option>Kerala</option><option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option><option>Odisha</option><option>Punjab</option><option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option><option>Andaman and Nicobar Islands</option><option>Chandigarh</option><option>Dadra and Nagar Haveli and Daman and Diu</option><option>Delhi</option><option>Jammu and Kashmir</option><option>Ladakh</option><option>Lakshadweep</option><option>Puducherry</option><option>Outside India</option></select><em class="terr">Please select your state.</em></label>
+              <fieldset class="tset full"><legend>I am a</legend><div class="chips"><label class="chip"><input type="radio" name="iam" value="Business owner"><span>Business owner</span></label><label class="chip"><input type="radio" name="iam" value="CA"><span>CA</span></label><label class="chip"><input type="radio" name="iam" value="Auditor"><span>Auditor</span></label><label class="chip"><input type="radio" name="iam" value="Accountant"><span>Accountant</span></label><label class="chip"><input type="radio" name="iam" value="Staff"><span>Staff</span></label><label class="chip"><input type="radio" name="iam" value="Online seller"><span>Online seller</span></label><label class="chip"><input type="radio" name="iam" value="__other__"><span>Other</span></label></div>
+                <label class="tf tother" id="iamOther"><input name="iam_other" maxlength="80" placeholder="Please tell us your role"></label></fieldset>
+              <fieldset class="tset full"><legend>I use</legend><div class="chips"><label class="chip"><input type="radio" name="iuse" value="TallyPrime"><span>TallyPrime</span></label><label class="chip"><input type="radio" name="iuse" value="BUSY"><span>BUSY</span></label><label class="chip"><input type="radio" name="iuse" value="Both"><span>Both</span></label><label class="chip"><input type="radio" name="iuse" value="Tally ERP 9"><span>Tally ERP 9</span></label><label class="chip"><input type="radio" name="iuse" value="Not sure"><span>Not sure</span></label></div></fieldset>
+              <label class="tf full"><span>Anything you want to tell us?</span><textarea name="note" maxlength="1000" placeholder="e.g. I sell on Amazon and Flipkart, and want the monthly entries done in Tally."></textarea></label>
+              <label class="thp" aria-hidden="true">Website<input name="website" tabindex="-1" autocomplete="off"></label>
+            </div>
+            <div class="tsubmit">
+              <button type="submit" class="btn btn-primary tbtn" id="tbtn"><svg viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg>Get my download link</button>
+              <p class="tfine">We use your details only to send the trial and help you set up. No spam.</p>
+            </div>
+            <div class="tmsg" id="tmsg" role="alert"></div>
+          </div>
+          <div class="tdone" id="tdone" role="status" aria-live="polite">
+            <div class="tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+            <h3>Thank you<span id="tdName"></span>!</h3>
+            <p>Your download link is on its way to <b id="tdEmail"></b>.</p>
+            <ol>
+              <li>Open the e-mail from <b>Divit Tally Automator</b> (check Promotions or Spam if it is not in the Inbox).</li>
+              <li>Download and run the setup. The brochure and user manual are attached.</li>
+              <li>Open TallyPrime on the same computer and start the app.</li>
+            </ol>
+            <a class="btn btn-wa" href="https://wa.me/919910591898?text=Hi%2C%20I%20filled%20the%20trial%20form%20for%20Divit%20Tally%20Automator.">No e-mail in 5 minutes? WhatsApp us</a>
+          </div>
+        </form>
+        <div id="gformFallback" style="display:none;background:var(--surface);border:1px solid var(--primary-line);border-radius:12px;padding:22px 24px;box-shadow:var(--shadow);max-width:620px;margin:0 auto">
           <b style="color:var(--ink);font-size:17px;font-family:var(--font-display)">Get your 15-day free trial.</b>
           <p style="margin:9px 0 0;font-size:14px;color:var(--ink-muted)">Message us on WhatsApp with your name and firm, and we&rsquo;ll send your Windows download link - usually the same working day.</p>
           <p style="margin:14px 0 0"><a class="btn btn-primary" href="https://wa.me/919910591898?text=Hi%2C%20I%20want%20the%2015-day%20free%20trial%20of%20Divit%20Tally%20Automator." style="background:var(--primary);color:#fff;border:0">Message us on WhatsApp</a></p>
@@ -694,13 +780,54 @@ html{scroll-behavior:smooth}
 
 <script>
 (function(){
-  var GFORM="https://docs.google.com/forms/d/e/1FAIpQLSdijr5HC0Q3fjHojsCJoZwnyFJFpQeIzxkheTxIP_oSWy3HDA/viewform?embedded=true";
-
-  // Embed the Google Form when configured; otherwise keep the WhatsApp fallback visible.
-  var frame=document.getElementById("gformFrame"), fb=document.getElementById("gformFallback");
-  if(GFORM && frame){
-    var src=GFORM.indexOf("embedded=true")>-1 ? GFORM : (GFORM + (GFORM.indexOf("?")>-1?"&":"?") + "embedded=true");
-    frame.src=src; frame.style.display="block"; if(fb) fb.style.display="none";
+  // Trial form: our own design, answers go into the Google Form (same Sheet, auto-reply and alert).
+  // If a question is added to the Google Form, add its entry number here.
+  var GFORM_POST="https://docs.google.com/forms/d/e/1FAIpQLSdijr5HC0Q3fjHojsCJoZwnyFJFpQeIzxkheTxIP_oSWy3HDA/formResponse";
+  var ENTRY={name:"entry.688083202", firm:"entry.1660099316", phone:"entry.437950993", email:"entry.1637886381",
+             state:"entry.1310891900", iam:"entry.1310105093", iuse:"entry.379453067", note:"entry.1700136270"};
+  var tf=document.getElementById("trialForm");
+  if(tf){
+    var $=function(n){return tf.elements[n];};
+    var radio=function(n){var c=tf.querySelector('input[name="'+n+'"]:checked');return c?c.value:"";};
+    var otherBox=document.getElementById("iamOther");
+    tf.querySelectorAll('input[name="iam"]').forEach(function(x){x.addEventListener("change",function(){
+      var on=radio("iam")==="__other__"; otherBox.classList.toggle("on",on); if(on) $("iam_other").focus();
+    });});
+    var phoneOk=function(v){var d=v.replace(/\D/g,""); if(d.length===12&&d.indexOf("91")===0) d=d.slice(2); if(d.length===11&&d[0]==="0") d=d.slice(1);
+      return (d.length===10&&/^[6-9]/.test(d)) || (v.trim().charAt(0)==="+"&&d.length>=8&&d.length<=15);};
+    var emailOk=function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());};
+    var checks={name:function(v){return v.trim().length>1;}, phone:phoneOk, email:emailOk, state:function(v){return !!v;}};
+    var mark=function(n){var box=tf.querySelector('[data-f="'+n+'"]'); var ok=checks[n]($(n).value); box.classList.toggle("bad",!ok); return ok;};
+    Object.keys(checks).forEach(function(n){ $(n).addEventListener("blur",function(){ if($(n).value) mark(n); });
+      $(n).addEventListener("input",function(){ var box=tf.querySelector('[data-f="'+n+'"]'); if(box.classList.contains("bad")) mark(n); }); });
+    var msg=document.getElementById("tmsg"), btn=document.getElementById("tbtn");
+    var BTN_HTML=btn.innerHTML;
+    var done=function(){
+      document.getElementById("tdName").textContent=$("name").value.trim()?", "+$("name").value.trim().split(/\s+/)[0]:"";
+      document.getElementById("tdEmail").textContent=$("email").value.trim();
+      document.getElementById("tfields").style.display="none";
+      var d=document.getElementById("tdone"); d.classList.add("on");
+      document.getElementById("get").scrollIntoView({behavior:"smooth",block:"start"});
+      if(window.gtag) gtag("event","trial_form_submit",{transport_type:"beacon"});
+    };
+    tf.addEventListener("submit",function(e){
+      e.preventDefault(); msg.classList.remove("on");
+      var bad=Object.keys(checks).filter(function(n){return !mark(n);});
+      if(bad.length){ $(bad[0]).focus(); return; }
+      if($("website").value){ done(); return; }              // a bot filled the hidden box
+      var body=new URLSearchParams();
+      ["name","firm","phone","email","state","note"].forEach(function(n){ var v=$(n).value.trim(); if(v) body.append(ENTRY[n],v); });
+      var iam=radio("iam"), iuse=radio("iuse");
+      if(iam==="__other__"){ body.append(ENTRY.iam,"__other_option__"); body.append(ENTRY.iam+".other_option_response",$("iam_other").value.trim()||"Other"); }
+      else if(iam){ body.append(ENTRY.iam,iam); }
+      if(iuse) body.append(ENTRY.iuse,iuse);
+      btn.disabled=true; btn.textContent="Sending...";
+      fetch(GFORM_POST,{method:"POST",mode:"no-cors",body:body}).then(done).catch(function(){
+        btn.disabled=false; btn.innerHTML=BTN_HTML;
+        msg.innerHTML='Could not send just now. Please check your internet and try again, or <a href="https://wa.me/919910591898?text=Hi%2C%20I%20want%20the%2015-day%20free%20trial%20of%20Divit%20Tally%20Automator.">message us on WhatsApp</a>.';
+        msg.classList.add("on");
+      });
+    });
   }
 
   // Close any open dropdown on an outside click.
